@@ -1752,3 +1752,11 @@ h1, h2, h3, h4, h5,
     left: -50px;
     width: 100%;
     height: 100%; }
+
+    .service-image-icon {
+      width: 95px;
+      height: 95px;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      color: #fff; }
