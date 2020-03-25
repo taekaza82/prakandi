@@ -208,7 +208,9 @@ body {
   line-height: 1.7;
   color: #364d59 !important;
   font-weight: 300;
-  font-size: 1rem; }
+  font-size: 1rem; 
+  font-family: 'Prompt', sans-serif;
+}
 
 ::-moz-selection {
   background: #000;
