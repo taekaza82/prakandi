@@ -326,3 +326,45 @@ jQuery(document).ready(function($) {
 
 
 });
+
+function sendEmail() {
+
+	var companyName = document.getElementById("textCompany").value;
+	var contactName = document.getElementById("textContactName").value;
+	var telNo = document.getElementById("textTelNo").value;
+	var email = document.getElementById("textEmail").value;
+	var detail = document.getElementById("textDetail").value;
+  
+	Email.send({
+	  Host : "smtp.gmail.com",
+	  Username : "services@anywheretogo.com",
+	  Password : "tong2012ps",
+	  To : 'support@prakandi.com,naphat@anywheretogo.com,jaturan@anywheretogo.com,kittinan@anywheretogo.com',
+	  From : "noreply@prakandi.com",
+	  Subject : "[Prakan Di] มีผู้ติดต่อขอรับใบเสนอราคา",
+	  Body : "มีผู้ติดต่อขอรับใบเสนอราคา <br><br>"+
+			 "บริษัท : " + companyName + "<br>" +
+			 "ชื่อผู้ติดต่อ : " + contactName + "<br>" +
+			 "เบอร์โทรติดต่อกลับ : " + telNo + "<br>" +
+			 "email : " + email + "<br>" +
+			 "รายละเอียดที่อยากทราบ : " + detail + "<br>" 
+	}).then(
+	message => checkResult(message)
+	);
+  
+  }
+  
+  function checkResult(result){
+	if(result == "OK") {
+	  document.getElementById("textCompany").value = "";
+	  document.getElementById("textContactName").value = "";
+	  document.getElementById("textTelNo").value = "";
+	  document.getElementById("textEmail").value = "";
+	  document.getElementById("textDetail").value = "";
+  
+	  alert("ขอบคุณสำหรับข้อมูลของท่าน เราจะติดต่อกลับโดยเร็วที่สุด");
+	} else {
+	  alert(result);
+	}
+  }
+  
