@@ -1761,3 +1761,10 @@ h1, h2, h3, h4, h5,
       position: relative;
       display: inline-block;
       color: #fff; }
+
+      .firstsection-image-icon {
+        width: 45px;
+        height: 45px;
+        position: relative;
+        display: inline-block;
+        color: #fff; }
