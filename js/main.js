@@ -327,31 +327,55 @@ jQuery(document).ready(function($) {
 
 });
 
+(function() {
+	'use strict';
+	window.addEventListener('load', function() {
+	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	  var forms = document.getElementsByClassName('needs-validation');
+	  // Loop over them and prevent submission
+	  var validation = Array.prototype.filter.call(forms, function(form) {
+		form.addEventListener('submit', function(event) {
+		  if (form.checkValidity() === false) {
+
+		  }
+		  event.preventDefault();
+		  event.stopPropagation();
+		  form.classList.add('was-validated');
+		}, false);
+	  });
+	}, false);
+  })();
+
 function sendEmail() {
 
-	var companyName = document.getElementById("textCompany").value;
-	var contactName = document.getElementById("textContactName").value;
-	var telNo = document.getElementById("textTelNo").value;
-	var email = document.getElementById("textEmail").value;
-	var detail = document.getElementById("textDetail").value;
-  
+	var companyName = document.getElementById("textCompany");
+	var contactName = document.getElementById("textContactName");
+	var telNo = document.getElementById("textTelNo");
+	var email = document.getElementById("textEmail");
+	var detail = document.getElementById("textDetail");
+
+	if(!companyName.checkValidity() || !contactName.checkValidity() || !telNo.checkValidity() || !email.checkValidity())
+	{
+		return;
+	}
 	Email.send({
 	  Host : "smtp.gmail.com",
 	  Username : "services@anywheretogo.com",
 	  Password : "tong2012ps",
-	  To : 'support@prakandi.com,naphat@anywheretogo.com,jaturan@anywheretogo.com,kittinan@anywheretogo.com',
+	  //To : 'support@prakandi.com,naphat@anywheretogo.com,jaturan@anywheretogo.com,kittinan@anywheretogo.com',
+	  To : 'jaturan@anywheretogo.com',
 	  From : "noreply@prakandi.com",
 	  Subject : "[Prakan Di] มีผู้ติดต่อขอรับใบเสนอราคา",
 	  Body : "มีผู้ติดต่อขอรับใบเสนอราคา <br><br>"+
-			 "บริษัท : " + companyName + "<br>" +
-			 "ชื่อผู้ติดต่อ : " + contactName + "<br>" +
-			 "เบอร์โทรติดต่อกลับ : " + telNo + "<br>" +
-			 "email : " + email + "<br>" +
-			 "รายละเอียดที่อยากทราบ : " + detail + "<br>" 
+			 "บริษัท : " + companyName.value + "<br>" +
+			 "ชื่อผู้ติดต่อ : " + contactName.value + "<br>" +
+			 "เบอร์โทรติดต่อกลับ : " + telNo.value + "<br>" +
+			 "email : " + email.value + "<br>" +
+			 "รายละเอียดที่อยากทราบ : " + detail.value + "<br>" 
 	}).then(
 	message => checkResult(message)
 	);
-  
+	
   }
   
   function checkResult(result){

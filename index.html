@@ -212,22 +212,36 @@
       </div>
         <div class="row">
           <div class="col-lg-8 mb-5" >
-            <form action="#" method="post">
+            <form action="#contactus" class="needs-validation" novalidate>
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input type="text" id="textCompany" class="form-control" placeholder="ชื่อบริษัท">
+                  <input type="text" id="textCompany" class="form-control" placeholder="ชื่อบริษัท" required>
+                  <div class="invalid-feedback">
+                    กรุณากรอกชื่อบริษัท
+                  </div>
                 </div>
+             
                 <div class="col-md-6">
-                  <input type="text" id="textContactName" class="form-control" placeholder="ชื่อผู้ติดต่อ">
+                  <input type="text" id="textContactName" class="form-control" placeholder="ชื่อผู้ติดต่อ" required>
+                  <div class="invalid-feedback">
+                    กรุณากรอกชื่อผู้ติดต่อ
+                  </div>
                 </div>
               </div>
-
+             
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input type="text" id="textTelNo" class="form-control" placeholder="เบอร์โทรติดต่อกลับ">
+                  <input type="text" id="textTelNo" class="form-control" placeholder="เบอร์โทรติดต่อกลับ" required>
+                  <div class="invalid-feedback">
+                    กรุณากรอกเบอร์โทรติดต่อกลับ
+                  </div>
                 </div>
+                
                 <div class="col-md-6">
-                  <input type="text" id="textEmail" class="form-control" placeholder="Email">
+                  <input type="text" id="textEmail" class="form-control" placeholder="Email" required>
+                  <div class="invalid-feedback">
+                    กรุณากรอก Email
+                  </div>
                 </div>
               </div>
 
@@ -238,7 +252,7 @@
               </div>
               <div class="form-group row">
                 <div class="col-md-6 mr-auto">
-                  <button type="button" onclick="sendEmail();" class="btn btn-block btn-primary text-white py-3 px-5" >Send Message</button>
+                  <button type="submit" onclick="sendEmail();" class="btn btn-block btn-primary text-white py-3 px-5" >Send Message</button>
                 </div>
               </div>
             </form>
@@ -249,10 +263,13 @@
               <ul class="list-unstyled footer-link">
                 <li class="d-block mb-3">
                   <span class="d-block text-black">Address:</span>
-                  <span>Prakan Di Broker <br>69/8 ซอยราชวิถี 1 ถนนรางน้ำ แขวงถนนพญาไท เขตราชเทวี กรุงเทพฯ 10400</span></li>
+                  <span>Prakan Di Broker <br>12/1 ถนนดินแดง แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400</span></li>
                 <li class="d-block mb-3"><span class="d-block text-black">Phone:</span><span><a href="tel:020211681">02-02-11-681</a> ทุกวัน 24 ชั่วโมง</span></li>
                 <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span><a href="mailto:support@prakandi.com">support@prakandi.com</a></span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">LINE ID:</span><span><a href="https://line.me/R/ti/p/%40prakandi">@prakandi</a> (มี @ ด้วยนะ)</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">LINE:</span>
+                  <span><a href="https://line.me/R/ti/p/%40prakandi">@prakandi</a> (มี @ ด้วยนะ)</span>
+                  <div><img src="images/line_qr.png" /></div>
+              </li>
               </ul>
             </div>
           </div>
