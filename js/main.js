@@ -362,8 +362,7 @@ function sendEmail() {
 	  Host : "smtp.gmail.com",
 	  Username : "services@anywheretogo.com",
 	  Password : "tong2012ps",
-	  //To : 'support@prakandi.com,naphat@anywheretogo.com,jaturan@anywheretogo.com,kittinan@anywheretogo.com',
-	  To : 'jaturan@anywheretogo.com',
+	  To : 'support@prakandi.com,naphat@anywheretogo.com,jaturan@anywheretogo.com,kittinan@anywheretogo.com',
 	  From : "noreply@prakandi.com",
 	  Subject : "[Prakan Di] มีผู้ติดต่อขอรับใบเสนอราคา",
 	  Body : "มีผู้ติดต่อขอรับใบเสนอราคา <br><br>"+
